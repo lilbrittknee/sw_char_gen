@@ -1,13 +1,4 @@
 // ***** Random Integer Start *****
-// Set Specieis URL to a random number every time it's run.
-
-// const getRandomInteger = (min, max) => {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-
-//  return Math.floor(Math.random() * (max - min)) + min;
-
-//};
 
 function getRandomInteger(min, max) {
   var num = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -121,7 +112,7 @@ if (randomInteger == 2) {
 // console.log("random force");
 // console.log(randomForceInteger);
 
-const forceSide = ["who has committed their life to the Light Side of the force.", "who has strayed towards the Dark Side of the force.", "who doesn't believe in the power of the force.", "who uses the Light Side of the force but you've...dabbled in the Dark Side."]
+const forceSide = ["who has committed their life to the Light Side of the force.", "who has fallen to the Dark Side of the force.", "who doesn't believe in the power of the force.", "who uses the Light Side of the force but you've...dabbled in the Dark Side."]
 // console.log("force alignment:")
 var forceAlignment = forceSide[randomForceInteger]
 console.log(forceSide[randomForceInteger])

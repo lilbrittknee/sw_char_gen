@@ -27,6 +27,7 @@ async function fetchSpecies() {
 
   const displaySpecies = document.getElementById("displaySpecies");
   displaySpecies.innerHTML = getSpecies.name;
+
 }
 
 fetchSpecies();
@@ -78,7 +79,26 @@ fetchMaxAge();
 
 // ***** Force Alignment Start *****
 
-// If droid, do not give force alignment. 
+
+
+const getRandomForce = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+
+  return Math.floor(Math.random() * (max - min + 1)) + min
+
+};
+const randomForceInteger = getRandomForce(0, 1);
+// console.log("random force");
+// console.log(randomForceInteger);
+
+const forceSide = ["Light", "Dark"]
+// console.log("force alignment:")
+var forceAlignment = forceSide[randomForceInteger]
+console.log(forceSide[randomForceInteger])
+
+const displayForce = document.getElementById("displayForce");
+displayForce.innerHTML = forceAlignment;
 
 // ***** Force Alignment End *****
 

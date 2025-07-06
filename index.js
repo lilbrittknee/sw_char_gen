@@ -1,24 +1,5 @@
-// fetch("https://swapi.info/api/species/")
-//   .then(response => {
-
-//     if (!response.ok) {
-//       throw new Error("Could not fetch resource");
-//     }
-//     return response.json();
-//   })
-//   .then(data => console.log(data))
-//   .catch(error => console.error(error));
-
-// It's Ctrl + K + C to comment and Ctrl + K + U to uncomment.
-// let request = "https://swapi.info/api/species/"
-
-// fetch(request).then((response) => {
-//   return response.json();
-// }).then((data) => {
-//   let p = document.getElementById("text");
-//   console.log(data);
-//   p.innerHTML = JSON.stringify(data);
-// });
+// ***** Random Integer Start *****
+// Set Specieis URL to a random number every time it's run.
 
 const getRandomInteger = (min, max) => {
   min = Math.ceil(min);
@@ -45,52 +26,86 @@ async function fetchSpecies() {
 
 fetchSpecies();
 
+//         ***** Random Integer End *****
 
-//Find the maximum age based by pulling average_lifespan and making that the max
+
+//         ***** Max Age Start *****
+// Find the maximum age based by pulling average_lifespan and making that the max.
+
+// If the average lifespann is not an integer, make the maximum age 100
 
 async function fetchMaxAge() {
   const results = await fetch((`https://swapi.info/api/species/${randomInteger}`));
 
   const data = await results.json();
-  const getMaxAge = data.average_lifespan
+  var getMaxAge = data.average_lifespan
 
-  if (Number.getMaxAge == false) {
+  // console.log(getMaxAge);
+  // console.log(!isNaN(getMaxAge));
+
+  if (!isNaN(getMaxAge) == false) {
     getMaxAge = 100;
-    console.log(getMaxAge);
+    // console.log(getMaxAge);
   }
-  else {
-    console.log(getMaxAge);
-  }
-
+  // console.log(getMaxAge);
   // console.log(randomInteger);
+
+  // Set Maximum Age as the maximum random number pulled.
+  const getRandomAge = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+
+    return Math.floor(Math.random() * (max - min)) + min;
+
+  };
+
+  const randomAge = getRandomAge(18, getMaxAge);
+  console.log(randomAge);
+
+  const displayAge = document.getElementById("displayAge");
+  displayAge.innerHTML = randomAge;
 }
 
+
 fetchMaxAge();
+//         ***** Max Age End *****
 
-//Put getMaxAge into the max, sp the random age does not exceed average lifespan
+// ***** Force Alignment Start *****
 
-// const randomAge = getRandomAge(1, 37);
+// If droid, do not give force alignment. 
 
-// console.log(randomAge);
+// ***** Force Alignment End *****
 
-// const getRandomAge = (min, max) => {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
 
-//   return Math.floor(Math.random() * (max - min)) + min;
+// ***** Planet Start *****
 
-// };
+const getPlanetInteger = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
 
-//Will be used to display the random age
+  return Math.floor(Math.random() * (max - min)) + min;
 
-// async function fetchSpecies() {
-//   const results = await fetch((`https://swapi.info/api/species/${randomAge}`));
+};
 
-//   const getSpecies = await results.json();
-//   console.log(getSpecies.name);
+const planetInteger = getPlanetInteger(1, 60);
 
-//   const displaySpecies = document.getElementById("displaySpecies");
-//   displaySpecies.innerHTML = getSpecies.name;
-// }
+// console.log("Planet Int:")
+// console.log(planetInteger);
 
-// fetchSpecies();
+async function fetchPlanet() {
+  const results = await fetch((`https://swapi.info/api/planets/${planetInteger}`));
+
+  const getPlanet = await results.json();
+  // console.log("Planet Name:")
+  // console.log(getPlanet.name);
+
+  // console.log("Planet Int:")
+  // console.log(planetInteger);
+
+  const displayPlanet = document.getElementById("displayPlanet");
+  displayPlanet.innerHTML = getPlanet.name;
+}
+
+fetchPlanet();
+
+// ***** Planet End *****

@@ -23,8 +23,37 @@ async function fetchSpecies() {
   console.log(getSpecies.name);
   console.log(randomInteger);
 
+  console.log("Species first letter:")
+  console.log(getSpecies.name[0])
+
+  if ((getSpecies.name[0]) == ("A")) {
+    console.log("true");
+    var sentence = (`You are an ${getSpecies.name}`);
+  }
+  else if ((getSpecies.name[0]) == ("E")) {
+    console.log("true");
+    var sentence = (`You are an ${getSpecies.name}`);
+  }
+  else if ((getSpecies.name[0]) == ("I")) {
+    console.log("true");
+    var sentence = (`You are an ${getSpecies.name}`);
+  }
+  else if ((getSpecies.name[0]) == ("O")) {
+    console.log("true");
+    var sentence = (`You are an ${getSpecies.name}`);
+  }
+  else if ((getSpecies.name[0]) == ("U")) {
+    console.log("true");
+    var sentence = (`You are an ${getSpecies.name}`);
+  }
+  else {
+    console.log("false");
+    var sentence = (`You are a ${getSpecies.name}`);
+  }
+
+
   const displaySpecies = document.getElementById("displaySpecies");
-  displaySpecies.innerHTML = getSpecies.name;
+  displaySpecies.innerHTML = sentence;
 
 }
 

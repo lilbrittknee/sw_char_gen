@@ -5,8 +5,6 @@
 //   min = Math.ceil(min);
 //   max = Math.floor(max);
 
-//   return ([2, 6].includes(num)) ? getRandomInteger(min, max) : num;
-
 //  return Math.floor(Math.random() * (max - min)) + min;
 
 //};
@@ -77,9 +75,8 @@ async function fetchMaxAge() {
 fetchMaxAge();
 //         ***** Max Age End *****
 
+
 // ***** Force Alignment Start *****
-
-
 
 const getRandomForce = (min, max) => {
   min = Math.ceil(min);
@@ -88,7 +85,10 @@ const getRandomForce = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 
 };
-const randomForceInteger = getRandomForce(0, 2);
+var randomForceInteger = getRandomForce(0, 2);
+if (randomInteger == 2) {
+  randomForceInteger = 3;
+};
 // console.log("random force");
 // console.log(randomForceInteger);
 
@@ -133,5 +133,7 @@ async function fetchPlanet() {
 }
 
 fetchPlanet();
+
+
 
 // ***** Planet End *****

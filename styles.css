@@ -1,0 +1,37 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.species {
+  height: 100px;
+  /* width: 5; */
+  padding-left: 5px;
+  padding-right: 5px;
+
+
+}
+
+.age {
+  height: 100px;
+  /* width: 5; */
+  padding-left: 5px;
+
+}
+
+.force {
+  height: 100px;
+  /* width: 5; */
+  padding-left: 3px;
+  padding-right: 3px;
+
+
+}
+
+.planet {
+  height: 100px;
+  /* width: 5; */
+  padding-left: 5px;
+  padding-right: 3px;
+
+}

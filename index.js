@@ -92,7 +92,7 @@ const randomForceInteger = getRandomForce(0, 1);
 // console.log("random force");
 // console.log(randomForceInteger);
 
-const forceSide = ["Light", "Dark"]
+const forceSide = ["who has committed their life to the Light side of the force.", "who has strayed towards the dark side of the force."]
 // console.log("force alignment:")
 var forceAlignment = forceSide[randomForceInteger]
 console.log(forceSide[randomForceInteger])

@@ -114,14 +114,14 @@ const getRandomForce = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 
 };
-var randomForceInteger = getRandomForce(0, 2);
+var randomForceInteger = getRandomForce(0, 3);
 if (randomInteger == 2) {
-  randomForceInteger = 3;
+  randomForceInteger = 2;
 };
 // console.log("random force");
 // console.log(randomForceInteger);
 
-const forceSide = ["who has committed their life to the Light side of the force.", "who has strayed towards the dark side of the force.", "who doesn't believe in the power of the force."]
+const forceSide = ["who has committed their life to the Light Side of the force.", "who has strayed towards the Dark Side of the force.", "who doesn't believe in the power of the force.", "who uses the Light Side of the force but you've...dabbled in the Dark Side."]
 // console.log("force alignment:")
 var forceAlignment = forceSide[randomForceInteger]
 console.log(forceSide[randomForceInteger])

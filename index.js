@@ -1,17 +1,22 @@
 // ***** Random Integer Start *****
 // Set Specieis URL to a random number every time it's run.
 
-const getRandomInteger = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+// const getRandomInteger = (min, max) => {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
 
-  return Math.floor(Math.random() * (max - min)) + min;
+//   return ([2, 6].includes(num)) ? getRandomInteger(min, max) : num;
 
-};
+//  return Math.floor(Math.random() * (max - min)) + min;
 
-const randomInteger = getRandomInteger(1, 37);
+//};
 
-// console.log(randomInteger);
+function getRandomInteger(min, max) {
+  var num = Math.floor(Math.random() * (max - min + 1)) + min;
+  return ([2, 6].includes(num)) ? getRandomInteger(min, max) : num;
+}
+const randomInteger = getRandomInteger(1, 37)
+console.log(randomInteger)
 
 async function fetchSpecies() {
   const results = await fetch((`https://swapi.info/api/species/${randomInteger}`));
@@ -25,6 +30,7 @@ async function fetchSpecies() {
 }
 
 fetchSpecies();
+
 
 //         ***** Random Integer End *****
 

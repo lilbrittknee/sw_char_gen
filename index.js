@@ -166,3 +166,24 @@ fetchPlanet();
 
 
 // ***** Planet End *****
+
+
+// ***** Occupation Start ****** 
+
+const getRandomJob = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+
+  return Math.floor(Math.random() * (max - min)) + min;
+
+};
+var totalOccupations =
+  ["adjunct", "analyst", "armorer", "chief steward", "collector", "contract broker", "courier", "crate-buster", "crimson duty", "cutter", "deep hunter", "dishwasher", "diver", "docking controller", "droid builder", "droid-monger", "drop point agent", "duct rat", "dusk weaver", "fashion designer", "ferryman", "flatstender", "flight controller", "flight instructor", "folklorist", "force hunter", "fortune teller", "gatherer", "gorgmonger", "gunslinger", "gutter", "herbalist", "hermit", "hunt saboteur", "hypersurveyor", "imperial hunter", "information broker", "jedi hunter", "jockey", "linguist", "logger", "martial artist", "mind-slicer", "monster hunter", "mythologist", "navulator", "net-maker", "philosopher", "plumber", "porter", "portmaster", "private investigator", "prospector", "puppeteer", "quad racer", "quarantine inspector", "quartz philosopher", "racer", "rainman", "roustabout", "sabersmith", "scantech", "secretary", "security revenue agent", "shipspotter", "signals analyst", "steerage overseer", "strategist", "systems analyst", "systems coordinator", "tactician", "tax collector", "taxidermist", "thermocapsulary dehousing assister", "tibanna gas panner", "top tracker", "tourist director", "traffic controller", "trapper", "travel agent", "treasure hunting", "tunroth hunter", "water monger", "weapons master", "weaver", "windfisher"]
+
+const randomJob = getRandomJob(0, 85);
+console.log(randomJob);
+
+const displayAge = document.getElementById("displayOccpation");
+displayAge.innerHTML = totalOccupations[randomJob];
+
+// ***** Occupation End *****
